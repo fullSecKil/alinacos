@@ -1,0 +1,4 @@
+rootProject.name = 'alibaba-nacos-discovery-learningbo'
+
+include('alibaba-nacos-config-client')
+include('alibaba-nacos-config-discovery-root')

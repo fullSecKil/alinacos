@@ -1,0 +1,7 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'alibaba-nacos-discovery-client-common'
+// include('alibaba-nacos-discovery-client-common')
