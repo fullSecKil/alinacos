@@ -1,0 +1,34 @@
+#spring:
+#  profiles:
+#    # 在应用启动时，可以通过spring.profiles.active来指定具体的环境名称
+#    # 客户端就会把要获取配置的Data ID组织为：${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#    # ${spring.cloud.nacos.config.prefix} 默认${spring.application.name}
+#    active: test
+
+
+###
+# 通过拆分这两类配置内容，希望可以做到配置的共享加载与统一管理。
+#
+###
+spring:
+  cloud:
+    nacos:
+      config:
+        ext-config[0]:
+          data-id: actuator.yaml
+          group: DEFAULT_GROUP
+          file-extension: yaml
+          refresh: true
+        ext-config[1]:
+          data-id: log.yaml
+          group: DEFAULT_GROUP
+          file-extension: yaml
+          refresh: true
+
+server:
+  port: 9005
+
+  #spring.cloud.nacos.config.server-addr=localhost:8848
+
+spring.cloud.nacos:
+  config.server-addr: localhost:8848

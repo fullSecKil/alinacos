@@ -1,0 +1,18 @@
+spring:
+  application:
+    # Data ID中的alibaba-nacos-config-client：对应客户端的配置spring.cloud.nacos.config.prefix，默认值
+    # ${spring.application.name}，即：服务名
+    name: alibaba-nacos-config-client
+  cloud:
+    nacos:
+      config:
+        # Data ID中的properties：对应客户端的配置spring.cloud.nacos.config.file-extension，默认值为properties
+        # 修改为yaml
+        file-extension: yaml
+server:
+  port: 9005
+
+  #spring.cloud.nacos.config.server-addr=localhost:8848
+
+spring.cloud.nacos:
+  config.server-addr: localhost:8848

@@ -1,0 +1,23 @@
+spring:
+  application:
+    # Data ID中的alibaba-nacos-config-client：对应客户端的配置spring.cloud.nacos.config.prefix，默认值
+    # ${spring.application.name}，即：服务名
+    name: alibaba-nacos-config-client
+  cloud:
+    nacos:
+      config:
+        # Data ID中的properties：对应客户端的配置spring.cloud.nacos.config.file-extension，默认值为properties
+        # 修改为yaml
+        file-extension: yaml
+        # 增加group指定配置
+        group: TEST_GROUP
+        # 指定namespace配置, namespace的配置不是使用名称，而是使用Namespace的ID
+        # 此时使用的是namespace为test下的test_group的{spring.application.name}-test.yaml
+        namespace: 03862df1-3b52-467a-8a85-a8af27bd30e1
+server:
+  port: 9005
+
+  #spring.cloud.nacos.config.server-addr=localhost:8848
+
+spring.cloud.nacos:
+  config.server-addr: localhost:8848
